@@ -7,6 +7,7 @@ data <- read.table("household_power_consumption.txt", sep = ";", na.strings = "?
 # 2. convert date to proper Date format
 data[, 1] <- as.Date(data[, 1], "%d/%m/%Y")
 
-# 3. create histogram
+# 3. create histogram and write to png file
+png(file = "plot1.png")
 hist(data[, 3], col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-
+dev.off()
